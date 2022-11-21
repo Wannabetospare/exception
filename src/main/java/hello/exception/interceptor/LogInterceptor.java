@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
+
+// 인터셉터는 서블릿이 제공하는 기능이 아니라 스프링이 제공하는 기능
+
 @Slf4j
 public class LogInterceptor implements HandlerInterceptor {
     public static final String LOG_ID = "logId";

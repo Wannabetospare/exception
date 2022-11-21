@@ -14,7 +14,8 @@ public class ServletExController {
 
     @GetMapping("/error-ex")
     public void errorEx() {
-        throw new RuntimeException("예외 발생 !");
+        // 콘솔창에 어떤 예외인지 찍음
+        throw new RuntimeException("런타임 예외 발생 !");
     }
 
     @GetMapping("/error-404")
