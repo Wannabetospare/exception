@@ -21,14 +21,18 @@ public class ApiExceptionController {
     @GetMapping("/api/members/{id}")
     public MemberDto getMember(@PathVariable("id") String id) {
 
+
+        // 매핑주소에서 id 부분에 ex 로 온다면 RuntimeException 발생시키고 메시지로 "잘못된 사용자" 를 띄운다.
         if (id.equals("ex")) {
             throw new RuntimeException("잘못된 사용자");
         }
 
+        // 매핑주소에서 id 부분에 bad 로 온다면 IllegalArgumentException 발생시키고 메시지로 "잘못된 입력값" 를 띄운다.
         if (id.equals("bad")) {
             throw new IllegalArgumentException("잘못된 입력값");
         }
 
+        // 매핑주소에서 id 부분에 user-ex 로 온다면 UserException 발생시키고 메시지로 "사용자 오류" 를 띄운다.
         if (id.equals("user-ex")) {
             throw new UserException("사용자 오류");
         }
